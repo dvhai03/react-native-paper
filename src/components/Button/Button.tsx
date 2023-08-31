@@ -339,28 +339,31 @@ const Button = ({
               style={iconStyle}
             />
           ) : null}
-          <Text
-            variant="labelLarge"
-            selectable={false}
-            numberOfLines={1}
-            testID={`${testID}-text`}
-            style={[
-              styles.label,
-              !isV3 && styles.md2Label,
-              isV3 &&
-              (isMode('text')
-                ? icon || loading
-                  ? styles.md3LabelTextAddons
-                  : styles.md3LabelText
-                : styles.md3Label),
-              compact && styles.compactLabel,
-              uppercase && styles.uppercaseLabel,
-              textStyle,
-              labelStyle,
-            ]}
-          >
-            {children}
-          </Text>
+          <View style={{ alignItems: 'center', flexDirection: 'row' }}>
+            <Text
+              variant="labelLarge"
+              selectable={false}
+              numberOfLines={1}
+              testID={`${testID}-text`}
+              style={[
+                styles.label,
+                !isV3 && styles.md2Label,
+                isV3 &&
+                (isMode('text')
+                  ? icon || loading
+                    ? styles.md3LabelTextAddons
+                    : styles.md3LabelText
+                  : styles.md3Label),
+                compact && styles.compactLabel,
+                uppercase && styles.uppercaseLabel,
+                textStyle,
+                labelStyle,
+              ]}
+            >
+              {children}
+            </Text>
+          </View>
+
         </View>
       </TouchableRipple>
     </Surface>
@@ -393,16 +396,16 @@ const styles = StyleSheet.create({
   },
   /* eslint-disable react-native/no-unused-styles */
   md3Icon: {
-    marginLeft: 16,
-    marginRight: -16,
+    marginLeft: 10,
+    marginRight: -10,
   },
   md3IconCompact: {
     marginLeft: 8,
     marginRight: 0,
   },
   md3IconReverse: {
-    marginLeft: -16,
-    marginRight: 16,
+    marginLeft: -10,
+    marginRight: 10,
   },
   md3IconReverseCompact: {
     marginLeft: 0,
@@ -426,7 +429,8 @@ const styles = StyleSheet.create({
   },
   /* eslint-enable react-native/no-unused-styles */
   label: {
-    textAlign: 'center',
+    textAlign: 'left',
+
     textAlignVertical: 'center'
   },
   md2Label: {
@@ -439,7 +443,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   md3Label: {
-    marginHorizontal: 20,
+    marginHorizontal: 13,
     height: '100%',
     width: '70%',
 

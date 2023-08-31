@@ -250,7 +250,7 @@ const Button = ({
   const touchableStyle = {
     borderRadius: style
       ? ((StyleSheet.flatten(style) || {}) as ViewStyle).borderRadius ??
-        borderRadius
+      borderRadius
       : borderRadius,
   };
 
@@ -267,19 +267,19 @@ const Button = ({
   const iconStyle =
     StyleSheet.flatten(contentStyle)?.flexDirection === 'row-reverse'
       ? [
-          styles.iconReverse,
-          isV3 && styles[`md3IconReverse${compact ? 'Compact' : ''}`],
-          isV3 &&
-            isMode('text') &&
-            styles[`md3IconReverseTextMode${compact ? 'Compact' : ''}`],
-        ]
+        styles.iconReverse,
+        isV3 && styles[`md3IconReverse${compact ? 'Compact' : ''}`],
+        isV3 &&
+        isMode('text') &&
+        styles[`md3IconReverseTextMode${compact ? 'Compact' : ''}`],
+      ]
       : [
-          styles.icon,
-          isV3 && styles[`md3Icon${compact ? 'Compact' : ''}`],
-          isV3 &&
-            isMode('text') &&
-            styles[`md3IconTextMode${compact ? 'Compact' : ''}`],
-        ];
+        styles.icon,
+        isV3 && styles[`md3Icon${compact ? 'Compact' : ''}`],
+        isV3 &&
+        isMode('text') &&
+        styles[`md3IconTextMode${compact ? 'Compact' : ''}`],
+      ];
 
   return (
     <Surface
@@ -348,11 +348,11 @@ const Button = ({
               styles.label,
               !isV3 && styles.md2Label,
               isV3 &&
-                (isMode('text')
-                  ? icon || loading
-                    ? styles.md3LabelTextAddons
-                    : styles.md3LabelText
-                  : styles.md3Label),
+              (isMode('text')
+                ? icon || loading
+                  ? styles.md3LabelTextAddons
+                  : styles.md3LabelText
+                : styles.md3Label),
               compact && styles.compactLabel,
               uppercase && styles.uppercaseLabel,
               textStyle,
@@ -369,6 +369,8 @@ const Button = ({
 
 const styles = StyleSheet.create({
   button: {
+    alignItems: 'center',
+    justifyContent: 'center',
     minWidth: 64,
     borderStyle: 'solid',
   },
@@ -376,9 +378,10 @@ const styles = StyleSheet.create({
     minWidth: 'auto',
   },
   content: {
-    flexDirection: 'row',
+    width: '80%',
+    height: '100%',
     alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'row',
   },
   icon: {
     marginLeft: 12,
@@ -424,8 +427,7 @@ const styles = StyleSheet.create({
   /* eslint-enable react-native/no-unused-styles */
   label: {
     textAlign: 'center',
-    marginVertical: 9,
-    marginHorizontal: 16,
+    textAlignVertical: 'center'
   },
   md2Label: {
     letterSpacing: 1,
@@ -437,8 +439,10 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   md3Label: {
-    marginVertical: 10,
-    marginHorizontal: 24,
+    marginHorizontal: 20,
+    height: '100%',
+    width: '70%',
+
   },
   md3LabelText: {
     marginHorizontal: 12,
